@@ -6,11 +6,11 @@ const cors = require('cors')
 app.use(bodyParser.json())
 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'mysql://umkbd3bq0bkramf2:6SgnMS3e5N0IEaFt7VP5@bt4s4idd6x2mflgcuk03-mysql.services.clever-cloud.com:3306/bt4s4idd6x2mflgcuk03',
     port: 3306,
-    user: 'root',
-    password: 'root',
-    database: 'movie'
+    user: 'umkbd3bq0bkramf2',
+    password: '6SgnMS3e5N0IEaFt7VP5',
+    database: 'bt4s4idd6x2mflgcuk03'
 })
 
 connection.connect(err => {
