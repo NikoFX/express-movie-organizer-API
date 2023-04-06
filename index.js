@@ -3,15 +3,18 @@ const app = express()
 const mysql = require('mysql')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+require('dotenv').config()
+
 app.use(bodyParser.json())
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'root',
-    database: 'movie'
+    host: process.env.HOST,
+    port: process.env.PORT,
+    user: process.env.USER,
+    password:process.env.PASSWORD,
+    database: process.env.DB
 })
+
 
 connection.connect(err => {
     if (!err) {
@@ -52,6 +55,6 @@ app.get('/collection/:id', cors(), (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(8080, () => {
     console.log('server is running');
 })
