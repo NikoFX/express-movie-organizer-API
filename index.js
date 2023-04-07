@@ -44,6 +44,7 @@ app.get('/collection/:id', cors(), (req, res) => {
         if (rows.length) {
             const movieList = JSON.parse(rows[0].movie)
             res.json({
+                id: rows[0].id,
                 title: rows[0].title,
                 movie: movieList
             })
