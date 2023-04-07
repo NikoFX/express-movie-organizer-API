@@ -6,6 +6,11 @@ const cors = require('cors')
 require('dotenv').config()
 
 app.use(bodyParser.json())
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions))
 
 const connection = mysql.createConnection({
     host: process.env.HOST,
@@ -22,7 +27,7 @@ connection.connect(err => {
 })
 
 
-app.post('/collection', cors(), (req, res) => {
+app.post('/collection', (req, res) => {
     const b = JSON.stringify(req.body.movies)
     connection.query(`INSERT INTO collection (title,movie) VALUES ('${req.body.title}', '${b}')`, (err, rows) => {
         if (err) throw res.status(404).send(err)
@@ -37,7 +42,7 @@ app.post('/collection', cors(), (req, res) => {
     })
 })
 
-app.get('/collection/:id', cors(), (req, res) => {
+app.get('/collection/:id', (req, res) => {
     const id = Number(req.params.id)
     connection.query(`SELECT * from collection where id=${id}`, (err, rows) => {
         if (err) throw res.status(404).send(err);
