@@ -8,17 +8,14 @@ require('dotenv').config()
 app.use(bodyParser.json())
 
 var pool = mysql.createPool({
-    connectionLimit: 100,
+    connectionLimit: 10,
     waitForConnections: true,
-    queueLimit: 0,
     host: process.env.HOST,
     port: process.env.PORT,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DB,
     debug: true,
-    wait_timeout: 28800,
-    connect_timeout: 10
 });
 
 pool.getConnection(function (err, connection) {
@@ -36,7 +33,6 @@ pool.getConnection(function (err, connection) {
                     movie: movieList
                 })
             })
-            connection.release()
         })
     })
 
@@ -44,6 +40,7 @@ pool.getConnection(function (err, connection) {
         const id = Number(req.params.id)
         connection.query(`SELECT * from collection where id=${id}`, (err, rows) => {
             if (err) throw res.status(404).send(err);
+
             if (rows.length) {
                 const movieList = JSON.parse(rows[0].movie)
                 res.json({
@@ -53,9 +50,9 @@ pool.getConnection(function (err, connection) {
             } else {
                 res.status(404).send("id not found")
             }
-            connection.release()
         })
     })
+    connection.release()
 })
 
 app.listen(8080, () => {
