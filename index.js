@@ -22,7 +22,7 @@ connection.connect(err => {
 })
 
 
-app.post('/collection', (req, res) => {
+app.post('/collection', cors(), (req, res) => {
     const b = JSON.stringify(req.body.movies)
     connection.query(`INSERT INTO collection (title,movie) VALUES ('${req.body.title}', '${b}')`, (err, rows) => {
         if (err) throw res.status(404).send(err)
