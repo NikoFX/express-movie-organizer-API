@@ -26,11 +26,11 @@ app.post('/collection', (req, res) => {
     const b = JSON.stringify(req.body.movies)
     connection.query(`INSERT INTO collection (title,movie) VALUES ('${req.body.title}', '${b}')`, (err, rows) => {
         if (err) throw res.status(404).send(err)
-        connection.query(`SELECT * FROM collection ORDER BY id DESC LIMIT 1`, (err, rows) => {
-            const movieList = JSON.parse(rows[0].movie)
+        connection.query(`SELECT * FROM collection ORDER BY id DESC LIMIT 1`, (err, lrows) => {
+            const movieList = JSON.parse(lrows[0].movie)
             res.json({
-                id: rows[0].id,
-                title: rows[0].title,
+                id: lrows[0].id,
+                title: lrows[0].title,
                 movie: movieList
             })
         })
