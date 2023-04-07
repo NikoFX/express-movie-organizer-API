@@ -15,21 +15,6 @@ const connection = mysql.createConnection({
     database: process.env.DB
 });
 
-// const pool = mysql.createPool({
-//     connectionLimit: 10,
-//     waitForConnections: true,
-//     host: process.env.HOST,
-//     port: process.env.PORT,
-//     user: process.env.USER,
-//     password: process.env.PASSWORD,
-//     database: process.env.DB,
-//     debug: true,
-// });
-
-// pool.getConnection(function (err, connection) {
-//     if (err) throw err;
-
-
 connection.connect(err => {
     if (err) {
         return err
@@ -67,9 +52,7 @@ app.get('/collection/:id', cors(), (req, res) => {
         }
     })
 })
-//connection.release()
-//})
 
-app.listen(3000, () => {
+app.listen(8080, () => {
     console.log('server is running');
 })
