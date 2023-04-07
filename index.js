@@ -70,6 +70,6 @@ app.get('/collection/:id', cors(), (req, res) => {
 //connection.release()
 //})
 
-app.listen(8080, () => {
+app.listen(3000, () => {
     console.log('server is running');
 })
