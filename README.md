@@ -17,7 +17,8 @@ This API application provides two endpoints for creating and retrieving movie co
 To use this API application, you will need to have Node.js and npm installed on your machine. Once you have those installed, you can run the following commands to get started:
 
 ```
-npm install nodemon express mysql cors dotenv body-parser
+npm install
+nodemon index
 ```
 
 POST "/collection"
