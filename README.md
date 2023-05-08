@@ -3,13 +3,21 @@ This API application provides two endpoints for creating and retrieving movie co
 
 
 Usage
-POST /collection
-This endpoint allows users to create new collections. To create a new collection, send a POST request to "/collection" with a JSON body containing the collection data. The collection data should include a name and an array of items.
+POST "/collection"
+This endpoint allows users to create new collections. To create a new collection, send a POST request to "/collection" with a JSON body containing the collection data. The collection data should include a title and an array of movie imdbIDs.
 
 Example request body:
 
+{
+ "title": "My collection",
+ "movies": [
+ "t3248924",
+ "t4450678",
+ "t7709609"
+ ]
+}
 
-GET /collection/:id
+GET "/collection/:id"
 This endpoint allows users to retrieve a specific collection by its ID. To retrieve a collection, send a GET request to http://localhost:3000/collection/:id, where :id is the ID of the collection you want to retrieve.
 
 Example response:
