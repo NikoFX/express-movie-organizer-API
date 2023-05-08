@@ -1,8 +1,8 @@
-Overview
+# Overview
 This API application provides two endpoints for creating and retrieving movie collections. One of the endpoint allows users to create new collections, while the other endpoint allows users to retrieve a specific collection by the ID that received with POST
 
 
-Usage
+## Usage
 POST "/collection"
 This endpoint allows users to create new collections. To create a new collection, send a POST request to "/collection" with a JSON body containing the collection data. The collection data should include a title and an array of movie imdbIDs.
 
@@ -32,7 +32,7 @@ Example response:
 }
 
 
-Getting Started
+## Getting Started
 To use this API application, you will need to have Node.js and npm installed on your machine. Once you have those installed, you can run the following commands to get started:
 
 express
@@ -41,8 +41,8 @@ cors
 dotenv
 body-parser
 
-Authentication
+## Authentication
 This API application does not require authentication.
 
-License
+### License
 This API application is licensed under the [insert license here].
