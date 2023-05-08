@@ -18,11 +18,18 @@ Example request body:
 }
 
 GET "/collection/:id"
-This endpoint allows users to retrieve a specific collection by its ID. To retrieve a collection, send a GET request to http://localhost:3000/collection/:id, where :id is the ID of the collection you want to retrieve.
+This endpoint allows users to retrieve a specific collection by received ID. To retrieve a collection, send a GET request to "collection/:id", where :id is the ID of the collection you want to retrieve.
 
 Example response:
 
-
+{
+    "id": 51,
+    "title": "My collection",
+    "movie": [
+        "tt0068646",
+        "tt0098019"
+    ]
+}
 
 
 Getting Started
