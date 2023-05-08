@@ -8,8 +8,11 @@ This API application provides two endpoints for creating and retrieving movie co
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-- mysql
+
+- npm
+- node js
 - express JS
+- mysql
 - nodemon
 - cors
 - dotenv
