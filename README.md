@@ -35,21 +35,14 @@ Example response:
 Getting Started
 To use this API application, you will need to have Node.js and npm installed on your machine. Once you have those installed, you can run the following commands to get started:
 
-The server will be running on http://localhost:3000.
+express
+mysql
+cors
+dotenv
+body-parser
 
 Authentication
 This API application does not require authentication.
-
-Error Handling
-If there is an error with a request, the API will return an error response with an appropriate status code and error message. For example, if you send an invalid JSON body with a POST request, you will receive a 400 Bad Request response with an error message.
-
-Support
-If you have any questions or issues with this API application, please contact [insert contact information here].
-
-Contributing
-If you would like to contribute to the development of this API application, please follow these guidelines:
-
-[insert contribution guidelines here]
 
 License
 This API application is licensed under the [insert license here].
