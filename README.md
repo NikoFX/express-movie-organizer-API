@@ -1,10 +1,10 @@
 Overview
-This API application provides two endpoints for creating and retrieving collections. The POST '/collection' endpoint allows users to create new collections, while the GET '/collection/:id' endpoint allows users to retrieve a specific collection by the ID that received from POST.
+This API application provides two endpoints for creating and retrieving movie collections. One of the endpoint allows users to create new collections, while the other endpoint allows users to retrieve a specific collection by the ID that received with POST
 
 
 Usage
 POST /collection
-This endpoint allows users to create new collections. To create a new collection, send a POST request to http://localhost:3000/collection with a JSON body containing the collection data. The collection data should include a name and an array of items.
+This endpoint allows users to create new collections. To create a new collection, send a POST request to "/collection" with a JSON body containing the collection data. The collection data should include a name and an array of items.
 
 Example request body:
 
